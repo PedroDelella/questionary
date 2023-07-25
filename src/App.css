@@ -1,38 +1,203 @@
-.App {
+:root {
+  --fstColor: #5A7D7C;
+  --sColor: #232C33;
+  --tColor: #A0C1D1;
+  --fColor: #DADFF7;
+  --fivColor: #B5B2C2;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--fColor);
+}
+
+header > nav {
+  display:flex;
+  justify-content: center;
+}
+
+nav > a {
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 1em;
+  transition: 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+  color: black
+}
+
+nav > a:hover {
+  background-color: var(--fstColor);
+  color: var(--fColor);
+}
+
+main {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.plus {
+  background-color: var(--tColor);
+  color:var(--sColor);
+  font-size: large;
+}
+
+.less {
+  background-color: var(--fivColor);
+  font-size: large;
+}
+
+
+#introduction {
+     /*background-color: var(--fivColor); experimental */
+  border: 1px solid var(--sColor);
+  width: 100%;
+  height: fit-content;
+  padding: 4em;
+}
+
+
+.instruction {
+  font-size: larger;
+  font-weight: 400;
+  text-align: start;
+}
+
+.quote {
+  color: var(--sColor);
+  font-size: medium;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.explanation {
+  font-size: larger;
+  font-weight:400 ;
+  text-align: start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#introduction > h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: lighter;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#introduction > h1 > p {
+  margin: 0;
+}
+
+#introduction > h1 > span {
+  font-size: larger;
+  font-weight: 600;
+  padding: 0.1em;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  font-size: large;
+}
+
+
+@keyframes breathing-animation {
+  0% { transform: scale(1); opacity: 0.9;}
+  50% { transform: scale(1.1); opacity: 1}
+  100% {transform: scale(1); opacity: 0.9}
+}
+
+.qButton {
+  cursor: pointer;
+  background-color: var(--fstColor);
+  color: var(--fColor);
+  border: none;
+  border-radius: 1em;
+  margin-top: 3em;
+  padding: 1.5em;
+  font-size: 1em;
+  animation: breathing-animation 3s infinite ease-in-out
+}
+
+
+.nButton {
+  cursor: pointer;
+  background-color: var(--fstColor);
+  color: var(--fColor);
+  font-weight: bolder;
+  border: none;
+  border-radius: 1em;
+  margin-top: 3em;
+  padding: 1.5em;
+}
+
+
+
+form  {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: grid;
+  place-items: start;
+  margin: 2em 5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.options > div > input {
+  max-width: 3em;
+  max-height: 3em;
+  border-radius: 2em;
+  margin: 1em;
+  padding: 1em;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  border: none;
+}
+
+.options > div {
+  display: flex;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 1em;
+}
+
+footer > nav {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: var(--fivColor);
+  height: 2em;
+}
+
+footer > nav > a > p {
+  margin:0;
+}
+
+#result {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
